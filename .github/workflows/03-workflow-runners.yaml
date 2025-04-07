@@ -1,6 +1,6 @@
 name: 03-workflow-runners
 
-on: push
+on: workflow_dispatch
 
 jobs:
   ubuntu-echo:
@@ -10,7 +10,7 @@ jobs:
         run: echo "This job runs on ${{ runner.os }}"
       - name: Show OS architecture
         run: echo "This job runs on ${{ runner.arch}}"
-      - name: Show OS name
+      - name: Show Actions details
         run: echo "This job runs on ${{ runner.name }}"
   windows-echo:
     runs-on: windows-latest
@@ -19,7 +19,7 @@ jobs:
         run: echo "This job runs on ${{ runner.os }}"
       - name: Show OS architecture
         run: echo "This job runs on ${{ runner.arch}}"
-      - name: Show OS name
+      - name: Show Actions details
         run: echo "This job runs on ${{ runner.name }}"
   macos-echo:
     runs-on: macos-latest
@@ -28,5 +28,5 @@ jobs:
         run: echo "This job runs on ${{ runner.os }}"
       - name: Show OS architecture
         run: echo "This job runs on ${{ runner.arch}}"
-      - name: Show OS name
+      - name: Show Actions details
         run: echo "This job runs on ${{ runner.name }}"
