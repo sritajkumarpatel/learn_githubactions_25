@@ -20,5 +20,5 @@ jobs:
         run: npm ci
         working-directory: 04-using-actions/04-using-actions
       - name: Build App
-        run: npm build
+        run: npm run build
         working-directory: 04-using-actions/04-using-actions
