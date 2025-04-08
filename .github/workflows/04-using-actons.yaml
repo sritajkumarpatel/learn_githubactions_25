@@ -19,6 +19,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
         working-directory: 04-using-actions/04-using-actions
-      - name: Start App
-        run: npm start
+      - name: Build App
+        run: npm build
         working-directory: 04-using-actions/04-using-actions
