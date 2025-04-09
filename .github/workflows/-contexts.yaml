@@ -9,6 +9,10 @@ on:
         type: boolean
         default: false
 
+env:
+  MY_WORKFLOW_VAR: "wokflow-var"
+  MY_OVERWRIITEN_VAR: "overwrite-var"
+
 jobs:
   echo-data:
     runs-on: ubuntu-latest
@@ -24,3 +28,9 @@ jobs:
           echo "Run Number: ${{ github.run_number }}"
       - name: Retrieve Variable
         run: echo "My secret variable is ${{ vars.MY_VAR }}"
+        env:
+          MY_WORKFLOW_VAR: "Jobs Var and Not top level"
+      - name: Retrieve Environment Variable
+        run: |
+          echo "My environment variable is ${{ env.MY_WORKFLOW_VAR }}"
+          echo "My workflow variable is ${{env.MY_OVERWRIITEN_VAR }}"
