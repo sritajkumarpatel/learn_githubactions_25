@@ -16,6 +16,9 @@ env:
 jobs:
   echo-data:
     runs-on: ubuntu-latest
+    env:
+      MY_WORKFLOW_VAR: "env-var"
+      MY_OVERWRIITEN_VAR: "overwrite-env-var"
     steps:
       - name: Display Information
         run: |
@@ -29,7 +32,7 @@ jobs:
       - name: Retrieve Variable
         run: echo "My secret variable is ${{ vars.MY_VAR }}"
         env:
-          MY_WORKFLOW_VAR: "Jobs Var and Not top level"
+          MY_WORKFLOW_VAR: "Steps Var and Not top level"
       - name: Retrieve Environment Variable
         run: |
           echo "My environment variable is ${{ env.MY_WORKFLOW_VAR }}"
