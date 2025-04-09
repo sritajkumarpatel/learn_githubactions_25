@@ -16,7 +16,7 @@ jobs:
         if: ${{inputs.debug}}
         run: |
           echo "Triggered by: ${{github.event_name}}"
-          echo "Branch name by: ${{github.branch}}"
+          echo "Branch name by: ${{github.ref}}"
           echo "Commit SHA: ${{github.sha}}"
           echo "Runner OS: ${{runner.OS}}"
       - name: Debug - Print when triggered from main
