@@ -2,7 +2,7 @@ name: 06 - Contexts
 run-name: 06-Contets | DEBUG - ${{inputs.debug}}
 
 on:
-  push:
+  #   push:
   workflow_dispatch:
     inputs:
       debug:
@@ -35,8 +35,8 @@ jobs:
         env:
           MY_WORKFLOW_VAR: "Steps Var and Not top level"
         run: |
-          echo "My environment variable is ${{ env.MY_WORKFLOW_VAR }}"
-          echo "My workflow variable is ${{env.MY_OVERWRIITEN_VAR }}"
+          echo "MY_WORKFLOW_VAR: ${{ env.MY_WORKFLOW_VAR }}"
+          echo "MY_OVERWRIITEN_VAR: ${{env.MY_OVERWRIITEN_VAR }}"
 
   echo-data-2:
     runs-on: ubuntu-latest
