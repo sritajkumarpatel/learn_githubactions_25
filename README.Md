@@ -5,8 +5,7 @@ This repository is dedicated to learning and experimenting with **GitHub Actions
 ## Project Goals
 
 - Understand the basics of GitHub Actions.
-- Create and customize workflows for various use cases.
-- Explore triggers, jobs, and steps in GitHub Actions.
+  ZX  Z Z  - Explore triggers, jobs, and steps in GitHub Actions.
 - Learn how to integrate third-party actions and create custom actions.
 
 ## Repository Structure
