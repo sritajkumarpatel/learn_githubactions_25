@@ -24,5 +24,15 @@ jobs:
       - name: "I will execute when cancelled"
         if: ${{ cancelled() }}
         run: echo "I will print when the workflow is cancelled."
+      - name: "Print PR title"
+        run: echo "The PR title is - ${{ github.event.pull_request.title }}"
+      - name: "Print PR labels"
+        run: |
+          cat << EOF
+          ${{ toJSON(github.event.pull_request.labels) }}
+          EOF
+      - name: "Bug step"
+        if: ${{failure() && !cancelled() && github.event.pull_request.labels.*.name == 'bug'}}
+        run: echo "I am a bug fix'"
       - name: "Sleep for 20 seconds"
         run: sleep 20
