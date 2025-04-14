@@ -31,11 +31,11 @@ jobs:
       - name: "I will execute"
         if: ${{ !cancelled() }}
         run: echo "I will always print, except when the workflow is cancelled."
+      - name: "Bug step"
+        if: ${{failure() && !cancelled() && github.event.pull_request.labels.*.name == 'fix'}}
+        run: echo "I am a new bug fix"
       - name: "I will execute when cancelled"
         if: ${{ cancelled() }}
         run: echo "I will print when the workflow is cancelled."
-      - name: "Bug step"
-        if: ${{failure() && !cancelled() && github.event.pull_request.labels.*.name == 'fix'}}
-        run: echo "I am a new bug fix'"
       - name: "Sleep for 20 seconds"
         run: sleep 20
