@@ -25,13 +25,13 @@ jobs:
           echo "Job env var: ${{env.JOB_VAR}}"
           echo "Job env overwritten: ${{env.OVERWRITTEN}}"
           echo "Workflow env var: ${{env.WORKFLOW_VAR}}"
-          echo "Workflow env overwritten: ${{env.WORKFLOW_VAR}}"
+          echo "Workflow env overwritten: ${{env.OVERWRITTEN}}"
 
-      - name: Print env variables
+      - name: Print env variables - 2
         run: |
           echo "Step env var: ${{env.STEP_VAR}}"
           echo "Step env overwritten: ${{env.OVERWRITTEN}}"
           echo "Job env var: ${{env.JOB_VAR}}"
           echo "Job env overwritten: ${{env.OVERWRITTEN}}"
           echo "Workflow env var: ${{env.WORKFLOW_VAR}}"
-          echo "Workflow env overwritten: ${{env.WORKFLOW_VAR}}"
+          echo "Workflow env overwritten: ${{env.OVERWRITTEN}}"
