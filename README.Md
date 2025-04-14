@@ -1,4 +1,4 @@
-# GitHub Actions Learning Project
+# GitHub Actions Learning Project - Test
 
 This repository is dedicated to learning and experimenting with **GitHub Actions**, a powerful CI/CD tool for automating workflows directly in your GitHub repository.
 
