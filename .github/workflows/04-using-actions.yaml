@@ -1,4 +1,4 @@
-name: 04-using Actions
+name: 04 - Using Actions
 
 on: workflow_dispatch
 

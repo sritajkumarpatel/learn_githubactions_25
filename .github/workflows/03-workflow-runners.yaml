@@ -1,4 +1,4 @@
-name: 03-workflow-runners
+name: 03 - Workflow Runners
 
 on: workflow_dispatch
 
