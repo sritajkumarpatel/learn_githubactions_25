@@ -16,7 +16,7 @@ jobs:
           ${{ toJSON(github.event.pull_request.labels) }}
           EOF
       - name: "Bug step"
-        if: ${{!cancelled() && github.event.pull_request.labels.*.name == 'fix'}}
+        if: ${{!cancelled() && contains(github.event.pull_request.title, 'fix')}}
         run: echo "I am a bug fix"
       - name: "Failing step"
         run: |
@@ -32,7 +32,7 @@ jobs:
         if: ${{ !cancelled() }}
         run: echo "I will always print, except when the workflow is cancelled."
       - name: "Bug step"
-        if: ${{failure() && !cancelled() && github.event.pull_request.labels.*.name == 'fix'}}
+        if: ${{failure() && !cancelled() && contains(github.event.pull_request.title, 'fix')}}
         run: echo "I am a new bug fix"
       - name: "I will execute when cancelled"
         if: ${{ cancelled() }}
