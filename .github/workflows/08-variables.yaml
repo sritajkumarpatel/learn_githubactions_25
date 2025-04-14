@@ -7,6 +7,8 @@ on:
 env:
   WORKFLOW_VAR: "I am a workflow env var"
   OVERWRITTEN: "I will be overwritten"
+  UNDEFINED_VAR_WITH_DEFAULT: var
+  UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR_WITH_DEFAULT || "default" }}
 
 jobs:
   echo:
@@ -35,3 +37,25 @@ jobs:
           echo "Job env overwritten: ${{env.OVERWRITTEN}}"
           echo "Workflow env var: ${{env.WORKFLOW_VAR}}"
           echo "Workflow env overwritten: ${{env.OVERWRITTEN}}"
+  echo_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print variables
+        run: echo "Repositiry variables ${{ vars.MY_VAR}}"
+
+  echo__prod:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Prod variables
+        run: |
+          echo "Environment Prod variables ${{ vars.TARGET_VAR }}"
+          echo "Environment Prod overwritten variables ${{vars.OVERWRITTEN_VAR}}"
+
+  echo_undefined:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print undefined variables
+        run: |
+          echo "Undefined variable with default value ${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
+          echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR }}"
+          echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR_2 }}" 
