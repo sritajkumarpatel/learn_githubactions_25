@@ -40,21 +40,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print variables
-        run: echo "Repositiry variables ${{ vars.MY_VAR}}"
+        run: echo 'Repositiry variables - ${{ vars.MY_VAR}}"
 
   echo__prod:
     runs-on: ubuntu-latest
     steps:
       - name: Print Prod variables
         run: |
-          echo "Environment Prod variables ${{ vars.TARGET_VAR }}"
-          echo "Environment Prod overwritten variables ${{vars.OVERWRITTEN_VAR}}"
+          echo "Environment Prod variables: ${{ vars.TARGET_VAR }}"
+          echo "Environment Prod overwritten variables: ${{vars.OVERWRITTEN_VAR}}"
 
   echo_undefined:
     runs-on: ubuntu-latest
     steps:
       - name: Print undefined variables
         run: |
-          echo "Undefined variable with default value ${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
-          echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR }}"
-          echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR_2 }}"
+          echo "Undefined variable with default value: ${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
+          echo "Undefined variable without default value: ${{ vars.UNDEFINED_VAR }}"
+          echo "Undefined variable without default value: ${{ vars.UNDEFINED_VAR_2 }}"
