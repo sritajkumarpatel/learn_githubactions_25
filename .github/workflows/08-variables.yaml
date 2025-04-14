@@ -26,14 +26,12 @@ jobs:
           echo "Job env overwritten: ${{env.OVERWRITTEN}}"
           echo "Workflow env var: ${{env.WORKFLOW_VAR}}"
           echo "Workflow env overwritten: ${{env.WORKFLOW_VAR}}"
-    echo_2:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Print env variables
-            run: |
-                echo "Step env var: ${{env.STEP_VAR}}"
-                echo "Step env overwritten: ${{env.OVERWRITTEN}}"
-                echo "Job env var: ${{env.JOB_VAR}}"
-                echo "Job env overwritten: ${{env.OVERWRITTEN}}"
-                echo "Workflow env var: ${{env.WORKFLOW_VAR}}"
-                echo "Workflow env overwritten: ${{env.WORKFLOW_VAR}}"
+
+      - name: Print env variables
+        run: |
+          echo "Step env var: ${{env.STEP_VAR}}"
+          echo "Step env overwritten: ${{env.OVERWRITTEN}}"
+          echo "Job env var: ${{env.JOB_VAR}}"
+          echo "Job env overwritten: ${{env.OVERWRITTEN}}"
+          echo "Workflow env var: ${{env.WORKFLOW_VAR}}"
+          echo "Workflow env overwritten: ${{env.WORKFLOW_VAR}}"
