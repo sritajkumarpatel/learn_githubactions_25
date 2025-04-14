@@ -7,8 +7,7 @@ on:
 env:
   WORKFLOW_VAR: "I am a workflow env var"
   OVERWRITTEN: "I will be overwritten"
-  UNDEFINED_VAR_WITH_DEFAULT: var
-  UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR_WITH_DEFAULT || "default" }}
+  UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR_WITH_DEFAULT || 'default'}}
 
 jobs:
   echo:
@@ -58,4 +57,4 @@ jobs:
         run: |
           echo "Undefined variable with default value ${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
           echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR }}"
-          echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR_2 }}" 
+          echo "Undefined variable without default value ${{ vars.UNDEFINED_VAR_2 }}"
