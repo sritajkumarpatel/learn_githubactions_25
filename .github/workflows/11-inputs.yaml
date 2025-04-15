@@ -25,11 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build
-        run: echo "Building from tag ${{inputs.tag.value}}"
+        run: echo "Building from tag ${{inputs.tag}}"
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: ${{inputs.dry-run.value == false}}
+    if: ${{!inputs.dry-run.value}}
+    environment: ${{inputs.target}}
     steps:
       - name: deploy
-        run: echo "Deploying to ${{inputs.target.value}}"
+        run: echo "Deploying to ${{inputs.target}}"
